@@ -34,6 +34,11 @@ public class LoginActivity extends BaseActivity implements LoginView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        if (appPreference.isLoggedIn()) {
+            startActivity(new Intent(this, HomeActivity.class));
+            finish();
+        }
+
         usernameEt = (EditText) findViewById(R.id.login_username_et);
         passwordEt = (EditText) findViewById(R.id.login_password_et);
         usernameTil = (TextInputLayout) findViewById(R.id.login_username_til);
@@ -94,6 +99,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
     public void navigateToHome() {
         appPreference.setLoggedIn(true);
         startActivity(new Intent(this, HomeActivity.class));
+        finish();
     }
 
 

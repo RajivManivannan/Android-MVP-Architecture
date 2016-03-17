@@ -5,7 +5,6 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 
 import com.reeuse.androidmvp.R;
 import com.reeuse.androidmvp.model.FollowingModel;
@@ -73,7 +72,7 @@ public class HomeActivity extends BaseActivity implements HomeView {
     @Override
     public void updateData(List<FollowingModel> followingModelList) {
         if (followingModelList != null) {
-            FollowingAdapter followingAdapter = new FollowingAdapter(HomeActivity.this,followingModelList);
+            FollowingAdapter followingAdapter = new FollowingAdapter(HomeActivity.this, followingModelList);
             recyclerView.setAdapter(followingAdapter);
         }
     }

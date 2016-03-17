@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
@@ -24,7 +23,7 @@ public class FollowingAdapter extends RecyclerView.Adapter<FollowingAdapter.View
     private Context context;
     private List<FollowingModel> followingModelList;
 
-    public FollowingAdapter(Context context,List<FollowingModel> followingModelList) {
+    public FollowingAdapter(Context context, List<FollowingModel> followingModelList) {
         this.followingModelList = followingModelList;
         this.context = context;
     }
@@ -39,9 +38,9 @@ public class FollowingAdapter extends RecyclerView.Adapter<FollowingAdapter.View
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         FollowingModel followingModel = followingModelList.get(position);
-       holder.avatarNameTxt.setText(followingModel.getLogin());
+        holder.avatarNameTxt.setText(followingModel.getLogin());
         ImageLoader imageLoader = new VolleyRequestHelper(context).getImageLoader();
-        holder.avatarPhotoImg.setImageUrl(followingModel.getAvatarUrl(),imageLoader);
+        holder.avatarPhotoImg.setImageUrl(followingModel.getAvatarUrl(), imageLoader);
     }
 
     @Override
@@ -57,6 +56,7 @@ public class FollowingAdapter extends RecyclerView.Adapter<FollowingAdapter.View
 
         NetworkImageView avatarPhotoImg;
         TextView avatarNameTxt;
+
         public ViewHolder(View itemView) {
             super(itemView);
             avatarPhotoImg = (NetworkImageView) itemView.findViewById(R.id.following_avatar_img);
