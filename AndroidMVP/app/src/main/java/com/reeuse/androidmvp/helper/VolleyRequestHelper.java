@@ -10,10 +10,12 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.reeuse.androidmvp.app.AppConstants;
 import com.reeuse.androidmvp.utils.Logger;
+import com.reeuse.androidmvp.utils.LruBitmapCache;
 
 import org.json.JSONObject;
 
@@ -32,6 +34,10 @@ public class VolleyRequestHelper {
     private Context context;
     private RequestQueue requestQueue;
     private OnRequestCompletedListener mRequestCompletedListener;
+
+    public VolleyRequestHelper(Context context) {
+        this.context = context;
+    }
 
 
     /**
@@ -148,6 +154,18 @@ public class VolleyRequestHelper {
             requestQueue.cancelAll(tag);
         }
     }
+
+    /**
+     * To get the ImageLoader class instance to load the network image in Image
+     * view.
+     *
+     * @return ImageLoader instance.
+     */
+    public ImageLoader getImageLoader() {
+        return new ImageLoader(getRequestQueue(),
+                new LruBitmapCache());
+    }
+
 
     /**
      * A callback interface indicates the status about the completion of HTTP
