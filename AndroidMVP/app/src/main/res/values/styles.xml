@@ -1,0 +1,51 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="BaseTheme" />
+
+    <!-- Base application theme. -->
+    <style name="BaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <!--   Darker variant for the status bar and contextual app bars -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!-- Dark variant for Tool bar and tab of the App -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--  Color for theme UI controls like checkboxes and text fields etc., -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- Title Text Color -->
+        <item name="android:textColorPrimary">@color/primaryText</item>
+        <!-- color of the menu overflow icon -->
+        <item name="android:textColorSecondary">@color/secondaryText</item>
+        <!-- Color of window background -->
+        <item name="android:windowBackground">@color/windowBackground</item>
+        <!-- Color of the Control Highlight-->
+        <item name="colorControlHighlight">@color/accentTranslucent</item> 
+        <!-- Selectable item Background like button, list-item etc-->
+        <item name="selectableItemBackground">@drawable/selectable_item_background</item>
+        <item name="android:selectableItemBackground">@drawable/selectable_item_background</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowActionBarOverlay">false</item>
+
+    </style>
+
+    <!--Card view Widget-->
+    <style name="Widget.CardContent" parent="android:Widget">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">24dp</item>
+        <item name="android:paddingBottom">24dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="WindowAnimationTransition">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>
