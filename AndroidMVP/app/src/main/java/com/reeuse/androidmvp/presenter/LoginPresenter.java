@@ -22,7 +22,7 @@ public class LoginPresenter {
 
 
     public void onSubmitClicked() {
-        if (TextUtils.isEmpty(loginView.getEmail())) {
+        if (TextUtils.isEmpty(loginView.getUsername())) {
             loginView.setUsernameError(context.getString(R.string.error_field_required));
             return;
         }

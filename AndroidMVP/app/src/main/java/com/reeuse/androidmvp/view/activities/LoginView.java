@@ -15,7 +15,7 @@ public interface LoginView {
 
     void setPasswordError(String error);
 
-    String getEmail();
+    String getUsername();
 
     void showMessage(String message);
 
