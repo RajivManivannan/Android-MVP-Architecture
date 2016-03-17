@@ -1,16 +1,21 @@
 package com.reeuse.androidmvp.view.activities;
+
 /**
-*Created by Rajiv M.
-*/
+ * Created by Rajiv M.
+ */
 public interface LoginView {
+
+    String getPassword();
 
     void showProgress();
 
     void hideProgress();
 
-    void setEmailError(String error);
+    void setUsernameError(String error);
 
     void setPasswordError(String error);
+
+    String getEmail();
 
     void showMessage(String message);
 
