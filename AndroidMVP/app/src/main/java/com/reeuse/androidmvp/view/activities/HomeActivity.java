@@ -52,14 +52,22 @@ public class HomeActivity extends BaseActivity implements HomeView {
 
     @Override
     public void showProgress() {
-        recyclerView.setVisibility(View.GONE);
-        swipeRefreshLayout.setRefreshing(true);
+        swipeRefreshLayout.post(new Runnable() {
+            @Override
+            public void run() {
+                swipeRefreshLayout.setRefreshing(true);
+            }
+        });
     }
 
     @Override
     public void hideProgress() {
-        recyclerView.setVisibility(View.VISIBLE);
-        swipeRefreshLayout.setRefreshing(false);
+        swipeRefreshLayout.post(new Runnable() {
+            @Override
+            public void run() {
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
     }
 
     @Override
