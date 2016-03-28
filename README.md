@@ -1,2 +1,2 @@
-# Android-MVP-Design-Pattern
-Sample implementation of Model View Presenter (MVP) Design pattern in Android.
+# Android-MVP-Architecture
+Sample Implementation of Android project using Model View Presenter (MVP) Design pattern Architecture.
